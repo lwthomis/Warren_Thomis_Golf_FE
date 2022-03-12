@@ -1,0 +1,90 @@
+.form-wrapper {
+    border: 3px solid rgb(227, 227, 227);
+    border-radius: 5px;
+    margin: 20px;
+    background-color: rgb(227, 227, 227);
+    padding: 5px 25px;
+
+    h4 {
+        margin-left: 5px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid black;
+
+    }
+
+    .form-header {
+        font-family: 'Redressed', cursive;
+        text-align: center;
+    }
+
+    .text-inputs-wrapper {
+        display: grid;
+        grid-template-columns: 3fr 3fr 1.5fr .25fr;
+        .input {
+            margin: 5px;
+        }
+    }
+
+    .tour-selectors-wrapper {
+        label {
+            margin-right: 25px;
+            
+            .checkbox {
+                margin-right: 5px;
+            }
+        }
+    }
+
+    .date-inputs-wrapper {
+        label {
+            margin-right: 50px;
+            .input {
+                margin-right: 5px;
+            }
+        }
+    }
+
+    .tournament-url {
+        padding: 20px 0px;
+        align-self: stretch;
+        
+        input {
+            box-sizing: border-box;
+            width: 100%;
+        }
+    }
+
+    .submit-button {
+        display: block;
+        margin-left: auto;
+        margin-right: 0px;
+        border: 1px solid transparent;
+        background-color: cadetblue;
+        color: white;
+        padding: 10px;
+        font-size: large;
+        border-radius: 5px;
+        font-weight: bolder;
+
+        &:hover {
+            cursor: pointer;
+            background-color: rgb(11, 85, 87);
+        }
+    } 
+}
+
+@media (max-width: 750px) {
+    .form-wrapper {
+        .text-inputs-wrapper {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+
+        .tour-selectors-wrapper {
+            .tour-checkbox-wrapper {
+                display: grid;
+                grid-template-rows: 1fr;
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+.coming-soon-wrapper {
+    text-align: center;
+
+    .coming-soon {
+        font-weight: bold;
+    }
+    
+    .coming-soon-msg {
+        .social-media-icon {
+            margin-top: 20px;
+            font-size: 3em;
+            font-weight: bolder;
+    
+            a {
+                color: blue;
+                
+                &:hover {
+                    filter: brightness(0);
+                }
+            }
+    
+        }
+    
+    }
+    
+
+}

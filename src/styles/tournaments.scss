@@ -1,0 +1,124 @@
+.schedule-wrapper {
+    display: grid; 
+    grid-template-columns: 1fr 1fr;
+
+    .schedule-item {
+        display: grid;
+        grid-template-columns: 1fr 40px;
+        grid-template-rows: 2fr 1fr 1fr 2fr;
+        align-items: center;
+        text-align: center;
+        grid-gap: 5px;
+        margin: 20px;
+        border: 1px solid black;
+        border-radius: 4px;
+        background-color: white;
+
+        .tournament-title {
+            grid-row: 1;
+            grid-column: 1 /span 2;
+            margin: 5px 40px;
+            font-family: 'Redressed', cursive;
+            font-size: larger;
+            font-weight: bolder;
+            text-transform: uppercase;
+
+
+            a {
+                color: black;
+                text-decoration: none;
+
+                
+                &:hover {
+                    text-shadow: 2px 2px 8px #00fff2;
+                }
+            }
+        }
+
+        .delete-button {
+            grid-row: 1;
+            grid-column: 2;
+
+            // border: 1px solid rgb(55, 51, 51);
+            // border-radius: 5px;
+            // background-color: lightgray;
+            // color: rgb(55, 51, 51);
+            // margin: 3px;
+            // align-self: start;
+
+            &:hover {
+                cursor: pointer;
+                color: darkred;
+                border-color: darkred;
+                background-color: rgb(255, 182, 182);
+            }
+        }
+
+        .tournament-location{
+            grid-row: 2;
+            grid-column: 1 /span 2;
+            border: 1px black solid;
+            margin: 0px 5px; 
+            background-color: #d7f8f6;
+
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+
+            .course {
+                text-transform: capitalize;
+                margin: 0px;
+            }
+
+            .city-state {
+                display: flex;
+                justify-content: center;
+
+                .city {
+                    text-transform: capitalize;
+                    padding-right: 3px;
+                    margin: 0px;
+                }
+
+                .state {
+                    text-transform: uppercase;
+                    padding-right: 10px;
+                    margin: 0px;
+                }
+            }
+        }
+
+        .tournament-date {
+            grid-row: 3;
+            grid-column: 1 /span 2;
+            font-weight: bolder;
+        }
+
+
+        .tournament-tour {
+            grid-row: 4;
+            grid-column: 1 /span 2;
+            
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            align-items: center;
+            justify-items: center; 
+                
+            img {
+                max-width: 100px;
+                max-height: 40px;
+                padding-bottom: 5px;
+            } 
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .schedule-wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+
+        .schedule-item {
+            font-size: small;
+        }
+    }
+}

@@ -1,0 +1,47 @@
+@import "navbar.scss";
+@import "sidebar.scss";
+@import "./pages/homepage.scss";
+@import "./pages/schedule.scss";
+@import "./forms/new-tournament.scss";
+@import "tournaments.scss";
+@import "./forms/add-delete-user.scss";
+@import "./pages/register.scss";
+@import "./pages/login.scss";
+@import "./pages/results.scss";
+// @import "~video-react/styles/scss/video-react";
+@import "./pages/swings.scss";
+
+body {
+    margin: 0px;
+    background-color: rgb(161, 158, 158);
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.page-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+.page-header {
+    grid-column: 1 /span 2;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+@media (max-width: 750px) {
+    .app {
+        display: grid;  
+        width: max-content;  
+    }
+
+    .page-wrapper {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+
+    }
+
+    .page-header {
+        grid-column: 1 /span 1;
+        margin: 5px 5px 0px 5px;
+        font-size: 1.5rem;
+    }
+}
