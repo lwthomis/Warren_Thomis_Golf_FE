@@ -6,6 +6,7 @@ import Homepage from "./components/pages/homepage";
 import Schedule from "./components/pages/schedule";
 import Results from "./components/pages/results";
 import Video from "./components/pages/video";
+import Login from './components/pages/login';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route exact path='/schedule' element={<Schedule />} />
           <Route exact path='/results' element={<Results />} />
           <Route exact path='/swings' element={<Video />} />
+          <Route exact path='/login' element={<Login />} />
         </Routes>
       </BrowserRouter>
     </div>

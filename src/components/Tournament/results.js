@@ -1,7 +1,7 @@
 import React, { useState, useEffect }from 'react';
 import axios from 'axios';
-// import { FontAwesomeIcon }  from '@fortawesome/react-fontawesome';
-// import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon }  from '@fortawesome/react-fontawesome';
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 function TournamentResults() {
     const [results, setResults] = useState([]);
@@ -11,12 +11,22 @@ function TournamentResults() {
         axios
         .get(`${process.env.REACT_APP_API}/results`)
         .then(response=> {
-            setResults(response.data.data);
+            setResults(response.data.data.sort((a,b) => {
+                let da = new Date(a.finish),
+                    db = new Date(b.finish);
+                return db - da;
+            }))
+            ;
         })
         .catch(err=> console.log(err)); 
     },[]); 
 
+    async function onDeleteClick(item) {
 
+        await axios
+        .delete(`${process.env.REACT_APP_API}/results/${item._id}`)
+        .then(() => alert("Tournament deleted."));
+    }
 
   return (
     <div className='results-wrapper'>
@@ -26,6 +36,11 @@ function TournamentResults() {
                     <div className="tournament-title" >
                         <a href={item.url} target="_blank" rel="noreferrer">{item.tournament}</a>
                     </div>
+                    {isAdmin === 'true' ? 
+                        <button className='delete-button' type='submit' onClick={() => onDeleteClick(item)}>
+                            <FontAwesomeIcon icon={faTrashAlt}/></button> : 
+                        null} 
+
                     <div className='mid-card-wrapper'>
                         <p className='course'>{item.course}</p>
                         <p className='pipes-wrapper'> || </p>
